@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="EatPlanner">
+    <head>
+        <meta charset="utf-8">
+        <title>Eat Planner!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Welcome to the Eat Planner</h1>
+        <br>
+        <br>
+        <h2> Please Login</h2>
+        <div class="col-md-6 col-md-offset-3">
+            <form name="form" ng-submit="vm.login()" role="form">
+                <div class = "form-group-1" ng-class="{ 'has-error': form.username.$invalid && form.username.$error.required } ">
+                    <label for="username">Enter Username</label>
+                    <input type="text" name="username" id="username" class="form-username" ng-model="vm.username" required />
+                    <span ng-show="form.username.$invalid && form.username.$error.required" class="help">You must enter a username</span>
+                </div>
+                <div class = "form-group-1" ng-class="{ 'has-error': form.password.$invalid && form.password.$error.required } ">
+                    <label for="password">Enter Password</label>
+                    <input type="text" name="password" id="password" class="form-password" ng-model="vm.password" required />
+                    <span ng-show="form.password.$invalid && form.password.$error.required" class="help">You must enter a password</span>
+                </div>
+                <div class="action">
+                    <button type="Enter" ng-disabled="form.$invalid || vm.dataloading" class="btn btn-primary">Login</button> 
+                    <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <a href="register.html" class="btn btn-link">Register</a>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+</html>

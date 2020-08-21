@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="EatPlanner">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h2 {
+                text-align: center;
+            }
+
+            .search_box {
+                position: absolute;
+            }
+
+            .description {
+                text-align: center;
+                height: 90000px;
+            }
+            h3 {
+                text-align: center;
+                height: 90000px;
+            }
+            .meal_option {
+                position: relative;
+                left: -30px;
+            }
+            .autocomplete {
+                position: relative;
+            }
+        </style>
+        <h2>Search For Resturants!</h2>
+    </head>
+
+    <body>
+        <div class='description'>
+            <h3>Just search a resturant to start!</h3>
+        </div>
+
+        <div class="meal_option">
+            <button onclick="verify(meal)" class="meal_option">Meal</button>
+            <div id="meal" class="dropdown">
+                <a class="meal_option_1" href="#" onclick="verify('breakfast')">Breakfast</a>
+                <a class="meal_option_2" href="#" onclick="verify('lunch')">Lunch</a>
+                <a class="meal_option_3" href="#" onclick="verify('dinner')">Dinner</a>
+                <a class="meal_option_4" href="#" onclick="verify('snack')">Snack</a>   
+            </div>
+        </div>
+
+        <script src="search_resturants.js"></script>
+        <script>
+            function update(meal) {
+                var d = new Date();
+                let currentMeal;
+                if (d.getHours() < 12 && (meal != "breakfast" || meal == "snack")) {
+        
+                }
+                else if ((d.getHours() > 12 && d.getHours() < 5) && meal != "lunch") {
+
+                }
+                else if ((d.getHours() > 5 && d.getHours() < 10) && meal != "lunch") {
+
+                }
+                else {
+                    currentMeal = meal;
+                    document.write("Getting " + meal);
+                    return currentMeal;
+                }
+            }
+        </script>
+
+        <div class="autocomplete">
+            <form action="search_resturants.js" method="get">
+                <input type="checkbox" name="autocomplete" value="terms">
+                <label for="autocomplete"> Enable Autocomplete by checking this box</label>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+        <div class="search_box_name">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <form class="search" action="search_resturants.js">
+                <input type="text" placeholder="Search for Meals by name...." name="terms">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="search_box">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <form class="search" action="search_resturants.js">
+                <input type="text" placeholder="Search for Meals by name...." name="terms">
+                <input type="text" placeholder="And location...." name="location">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
+    </body>
+</html>

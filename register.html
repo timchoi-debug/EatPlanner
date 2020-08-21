@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="EatPlanner">
+    <head>
+
+    </head>
+    <body>
+        <div class = "register_user">
+            <h3>Register</h3>
+            <form name="Register-form" ng-submit="vm.register()" role="form">
+                <div class="form-cat_name" ng-class="{ 'has-error: form.firstName.$dirty && form.firstName.$error.required }">
+                    <label for="username">First Name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-cat" ng-model="vm.user.firstName" required />
+                </div>
+                <div class="form-cat_username" ng-class="{ 'has-error: form.username.$dirty && form.username.$error.required }">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-cat" ng-model="vm.user.username" required />
+                </div>
+                <div class="form-cat_password" ng-class="{ 'has-error: form.password.$dirty && form.password.$error.required }">
+                    <label for="username">Password</label>
+                    <input type="text" name="password" id="password" class="form-cat" ng-model="vm.user.password" required />
+                </div>
+                <div class="action">
+                    <button type="Enter" ng-disabled="form.$invalid || vm.dataloading" class="btn btn-primary">Regsister</button> 
+                    <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    <a href="login.html" class="btn btn-link">Cancel</a>
+                </div>
+            </form>   
+        </div>
+    </body>
+</html>

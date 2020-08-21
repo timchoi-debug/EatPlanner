@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="EatPlanner">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h1 {
+                position: relative;
+                right: -600px;
+                width: 500px;
+                height: 200px;
+            }
+            .menu {
+                position: relative;
+                width: 130px;
+                height: 150px;
+            }
+
+            .search {
+                position: relative;
+                left: 60px;
+                height: -800px;
+
+            }
+            h2 {
+                position: relative;
+                height: -600px;
+                width: 500px;
+                left: 60px;
+            }
+
+            .logout {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+            .box_breakfast {
+                border: 1px solid green;
+                position: relative;
+                right: -600px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .box_lunch {
+                border: 1px solid white;
+                position: relative;
+                right: -800px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .box_dinner {
+                border: 1px solid white;
+                position: relative;
+                right: -900px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .box_snack {
+                border: 1px solid white;
+            }
+        </style>
+        <script>
+            var title = "Your Menu for " + new Date().toLocaleDateString() + ", Tim";
+            document.write(title);
+        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-content/app.css" rel="stylesheet" />
+   </head>
+
+   <body>
+    <img src="plate.jpeg" style="position:relative; top:140px; left: -150px;">
+       <br>
+       <br>
+       <menu> 
+          <h1> Your resturant choices </h1>  
+
+          <div class='box_breakfast'>
+               <h1>Breakfast:</h1>
+               <script>displayMenu(1);</script>
+          </div>
+          <div class='box_lunch'>
+              <h1>Lunch:</h1>
+              <script>displayMenu(2);</script>
+            </div>
+          <div class='box_dinner'>
+            <h1>Dinner:</h1>
+            <script>displayMenu(3);</script>
+          </div>
+          <div class='box_snack'>
+            <h1>Snack:</h1>
+            <script>displayMenu(4);</script>
+          </div>
+
+          <script src="search_resturants.js">
+            function displayMenu(num) {
+                if (num == 1 && chosenResturants.length >= 1) {
+                document.write(chosenResturants[0].getName());
+                document.write(chosenResturants[0].getLink());
+                document.write(chosenResturants[0].getPhone());
+                 }
+                 else if (num == 2 && chosenResturants.length >= 1) {
+                document.write(chosenResturants[1].getName());
+                document.write(chosenResturants[1].getLink());
+                document.write(chosenResturants[1].getPhone());
+                 }
+                else if (num == 3 && chosenResturants.length >= 1) {
+                document.write(chosenResturants[2].getName());
+                document.write(chosenResturants[2].getLink());
+                document.write(chosenResturants[2].getPhone());
+                }
+                else if (chosenResturants.length >= 1)  {
+                document.write(chosenResturants[3].getName());
+                document.write(chosenResturants[3].getLink());
+                document.write(chosenResturants[3].getPhone());
+                }
+              }
+          </script> 
+        </menu>
+
+        <search>
+            <h2>
+                Search for resturants
+            </h2>
+        
+            <a href="search.html" class="search">Click Here to start searching for food</a>
+        </search>
+
+        <div class="logout">
+            <button onclick="">Logout</button>
+        </div>
+
+   </body>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+
+</html>
