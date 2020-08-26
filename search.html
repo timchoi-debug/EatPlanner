@@ -26,6 +26,11 @@
             .autocomplete {
                 position: relative;
             }
+
+            .new_entry {
+                border: 1px solid green;
+                position: relative;
+            }
         </style>
         <h2>Search For Resturants!</h2>
     </head>
@@ -94,6 +99,48 @@
             </form>
         </div>
 
+        <script src="search_resturants.js"> </script>
+        <script>
+            function DisplayResults() {
+                if (found == false) {
+                    console.log("0 entries were found");
+                    return;
+                }
+                for (i = 0; i < queryResults.length; ++i) {
+                    document.write("<div class='new_entry'>");
+                    document.write(queryResults[i].getName());
+                    document.write(queryresults[i].getLocation());
+                    document.write(queryResults[i].getPhone());
+                    document.write(queryResults[i].getLink());
+                    document.write("<div class='choose'>");
+                    document.write("<button type='select' onclick='updateMeals(meal, resturant, queryResults[i])'>Select Resturant</button>");
+                    document.write("</div>");
+                    document.write("</div>");
+                }
+            }
 
+            function verifyDecision(food,place, item) {
+                if (window.confirm('Do you want to select this resturant')) {
+                    updateMeals(food, place, item);
+                    return true;
+                }
+                return false;
+            }
+
+            function updateMeals(food, place, item) {
+                if (food == "Breakfast") {
+                    chosenResturants[0].push(item);
+                }
+                else if (food == "Lunch") {
+                    chosenResturants[1].push(item);
+                }
+                else if (food == "Lunch") {
+                    chosenResturants[2].push(item);
+                }
+                else {
+                    chosenResturants[3].push(item);
+                }
+            }
+        </script>
     </body>
 </html>
